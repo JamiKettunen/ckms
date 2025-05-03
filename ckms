@@ -460,6 +460,7 @@ def get_compsfx():
     if opt_comp:
         return f".{opt_comp}"
     # figure out whether to compress modules
+    compsfx = ""
     for f in sorted((kern_path / opt_kernver).rglob("*.ko*")):
         if f.suffix in [".gz", ".xz", ".zst"]:
             compsfx = f.suffix
